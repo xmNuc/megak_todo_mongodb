@@ -32,9 +32,7 @@ class TodoRepository {
   }
 
   static async findAll() {
-    return (await (await todos.find()).toArray()).map(
-      (obj) => new TodoRecord(obj)
-    );
+    return (await todos.find()).toArray().map((obj) => new TodoRecord(obj));
   }
 
   static async update(record) {
